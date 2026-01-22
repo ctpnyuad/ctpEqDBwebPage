@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytical Ultra Centrifuge Beckman</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulseAccent {
+            0%, 100% { box-shadow: 0 0 0 rgba(105, 230, 250, 0.4); }
+            50% { box-shadow: 0 0 15px rgba(105, 230, 250, 0.8); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        .animate-pulseAccent {
+            animation: pulseAccent 2s infinite ease-in-out;
+        }
+        /* Custom scrollbar for a premium feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #2D3748; /* Darker charcoal */
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #69e6fa; /* Accent color */
+            border-radius: 4px;
+            border: 2px solid #2D3748;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #38bdf8; /* Slightly darker accent on hover */
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#1a202c', /* Deep blue, almost black */
+                        'secondary-charcoal': '#2D3748', /* Charcoal gray for background */
+                        'text-charcoal': '#CBD5E0', /* Lighter charcoal for body text */
+                        'content-white': '#F7FAFC', /* Crisp white for main content areas */
+                        'accent-cyan': '#69e6fa', /* Bright cyan */
+                    },
+                    fontFamily: {
+                        display: ['Montserrat', 'sans-serif'],
+                        body: ['Roboto', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-secondary-charcoal text-text-charcoal font-body leading-relaxed antialiased">
+
+    <div class="min-h-screen flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8">
+
+        <!-- Header Section -->
+        <header class="w-full max-w-4xl text-center mb-16 animate-fadeIn">
+            <h1 class="text-5xl md:text-6xl font-display font-bold text-accent-cyan mb-4 drop-shadow-lg leading-tight">
+                Analytical Ultra Centrifuge <br class="sm:hidden"> for Sedimentation equilibrium/Velocity Beckman
+            </h1>
+            <h2 class="text-xl md:text-2xl font-display text-content-white tracking-wide opacity-90">
+                Device technical specifications and related applications
+            </h2>
+        </header>
+
+        <main class="w-full max-w-4xl space-y-20">
+
+            <!-- Introduction Section -->
+            <section class="bg-primary-blue rounded-3xl p-8 md:p-12 shadow-2xl animate-fadeIn" style="animation-delay: 0.2s;">
+                <h3 class="text-3xl font-display font-semibold text-accent-cyan mb-6">Executive Summary</h3>
+                <div class="bg-secondary-charcoal p-6 rounded-2xl mb-8 flex flex-col md:flex-row items-center gap-6 shadow-inner animate-pulseAccent">
+                    <audio controls class="w-full md:w-auto flex-grow" style="filter: hue-rotate(180deg) saturate(200%);">
+                        <source src="C:\data\CTP DB design\eqMasDeviceGemPages\NoteBookLM PodCast-AUC.m4a" type='audio/mpeg'>
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <p class="text-lg text-content-white opacity-90 leading-relaxed">
+                    The Analytical Ultracentrifuge (AUC) is a cornerstone technology for characterizing macromolecules in solution. By precisely measuring their sedimentation behavior under high centrifugal forces, AUC experiments enable the determination of critical biophysical parameters such as molecular weight, size, shape, and crucial intermolecular interactions. This makes AUC an indispensable tool in biophysical research, drug discovery, and quality control processes for proteins, nucleic acids, and other biomacromolecules.
+                </p>
+            </section>
+			
+			<!-- Mind Map Section -->
+			<section class="bg-primary-blue rounded-3xl p-8 md:p-12 shadow-2xl animate-fadeIn" style="animation-delay: 0.3s;">
+				<div class="flex flex-col items-center">
+					<h3 class="text-3xl font-display font-semibold text-accent-cyan mb-2 text-center">AUC Conceptual Framework</h3>
+					<p class="text-text-charcoal mb-8 text-center max-w-2xl">
+						A comprehensive mind map connecting the hardware components, physical forces, and analytical outcomes of Analytical Ultracentrifugation.
+					</p>
+
+					<div class="w-full relative group cursor-zoom-in">
+						<img src="C:\data\CTP DB design\eqMasDeviceGemPages\NotebookLM Mind Map AUC.png" 
+							 alt="Mind map of AUC covering Hardware, Physics, and Data Analysis" 
+							 class="w-full h-auto rounded-2xl shadow-lg border-2 border-accent-cyan/20 transition-all duration-500 group-hover:border-accent-cyan/60 group-hover:shadow-[0_0_30px_rgba(105,230,250,0.2)]"/>
+						
+						<div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10 pointer-events-none"></div>
+					</div>
+					
+					<div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
+						<div class="text-center p-3 bg-secondary-charcoal rounded-xl border border-accent-cyan/10">
+							<span class="block text-accent-cyan font-bold text-lg">Hardware</span>
+							<span class="text-xs uppercase opacity-60">Rotors & Optics</span>
+						</div>
+						<div class="text-center p-3 bg-secondary-charcoal rounded-xl border border-accent-cyan/10">
+							<span class="block text-accent-cyan font-bold text-lg">Forces</span>
+							<span class="text-xs uppercase opacity-60">Sedimentation & Diffusion</span>
+						</div>
+						<div class="text-center p-3 bg-secondary-charcoal rounded-xl border border-accent-cyan/10">
+							<span class="block text-accent-cyan font-bold text-lg">Metrics</span>
+							<span class="text-xs uppercase opacity-60">S-Coefficients & MW</span>
+						</div>
+						<div class="text-center p-3 bg-secondary-charcoal rounded-xl border border-accent-cyan/10">
+							<span class="block text-accent-cyan font-bold text-lg">Software</span>
+							<span class="text-xs uppercase opacity-60">SEDFIT & UltraScan</span>
+						</div>
+					</div>
+				</div>
+			</section>
+
+            <!-- Core Explanation Section -->
+            <section class="bg-content-white rounded-3xl p-8 md:p-12 shadow-2xl animate-fadeIn" style="animation-delay: 0.4s;">
+				<h3 class="text-3xl font-display font-semibold text-primary-blue mb-6">Core Operating Principle</h3>
+    
+				<div class="mb-10">
+					<p class="text-lg text-secondary-charcoal leading-relaxed">
+						The Analytical Ultracentrifuge operates by subjecting sample solutions to exceptionally high centrifugal force fields, typically generated by rotors spinning at tens of thousands of RPM. This force causes macromolecules to sediment towards the bottom of the sample cell. Simultaneously, these macromolecules are subjected to diffusion, which acts in opposition to sedimentation. 
+						<br><br>
+						By analyzing either the kinetics of sedimentation (sedimentation velocity experiments) or the steady-state distribution once sedimentation and diffusion reach equilibrium (sedimentation-diffusion equilibrium experiments), researchers can quantitatively derive a wealth of molecular parameters.
+					</p>
+			</div>
+
+			<div class="relative group">
+				<h4 class="text-sm uppercase tracking-widest text-secondary-charcoal/60 font-bold mb-4 text-center">Visual Representation: Sedimentation Velocity & Equilibrium</h4>
+        
+				<img src="C:\data\CTP DB design\eqMasDeviceGemPages\NotebookLM InfoGrapics-AUC.png" 
+					alt="Analytical Ultracentrifuge Infographic showing sedimentation and diffusion forces" 
+					class="w-full h-auto rounded-xl shadow-lg transition-transform duration-300 ease-in-out group-hover:scale-[1.02] group-hover:shadow-2xl border-2 border-accent-cyan/30"/>
+        
+				<div class="absolute inset-0 bg-accent-cyan opacity-0 rounded-xl pointer-events-none transition-opacity duration-300 group-hover:opacity-5"></div>
+        
+				<p class="mt-4 text-sm text-secondary-charcoal/70 italic text-center">
+            
+				</p>
+			</div>
+		</section>
+
+            <!-- Detailed Breakdown Section -->
+            <section class="bg-primary-blue rounded-3xl p-8 md:p-12 shadow-2xl animate-fadeIn" style="animation-delay: 0.6s;">
+                <h3 class="text-3xl font-display font-semibold text-accent-cyan mb-10 text-center">Detailed Breakdown</h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Component Breakdown -->
+                    <div class="bg-secondary-charcoal p-6 rounded-2xl shadow-inner hover:shadow-accent-cyan/30 transition-shadow duration-300">
+                        <h4 class="text-2xl font-display font-semibold text-content-white mb-4 border-b border-accent-cyan/50 pb-2">Component Breakdown</h4>
+                        <ul class="list-disc list-inside space-y-3 text-lg text-text-charcoal">
+                            <li class="hover:text-accent-cyan transition-colors duration-200">
+                                <strong class="text-content-white">Rotor System:</strong> High-strength rotors (titanium/aluminum alloy) holding specialized sample cells, precisely balanced, capable of speeds up to 60,000 RPM generating over 250,000 x g.
+                            </li>
+                            <li class="hover:text-accent-cyan transition-colors duration-200">
+                                <strong class="text-content-white">Vacuum System:</strong> Robust pump and sealing mechanism evacuating the rotor chamber to below 10^-5 Torr to minimize air friction, prevent rotor heating, and enable ultra-high speeds.
+                            </li>
+                            <li class="hover:text-accent-cyan transition-colors duration-200">
+                                <strong class="text-content-white">Optical Detection System:</strong> Sophisticated optics (UV-Vis absorption and/or Rayleigh interference) that scan sample cells to measure concentration profiles over time and position.
+                            </li>
+                            <li class="hover:text-accent-cyan transition-colors duration-200">
+                                <strong class="text-content-white">Temperature Control System:</strong> Precision Peltier or recirculating fluid system maintaining rotor chamber temperature stability (typically ±0.1°C).
+                            </li>
+                            <li class="hover:text-accent-cyan transition-colors duration-200">
+                                <strong class="text-content-white">Drive and Control System:</strong> High-precision, direct-drive motor (often brushless) for speed control with minimal vibration, coupled with an electronic control unit for managing acceleration, deceleration, speed regulation, safety interlocks, and user interface.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Step-by-Step Workflow -->
+                    <div class="bg-secondary-charcoal p-6 rounded-2xl shadow-inner hover:shadow-accent-cyan/30 transition-shadow duration-300">
+                        <h4 class="text-2xl font-display font-semibold text-content-white mb-4 border-b border-accent-cyan/50 pb-2">Step-by-Step Workflow</h4>
+                        <ol class="list-decimal list-inside space-y-3 text-lg text-text-charcoal">
+                            <li class="hover:text-accent-cyan transition-colors duration-200">
+                                <strong class="text-content-white">Sample and Reference Preparation:</strong> Prepare purified macromolecular samples and matching buffer reference solutions, loading them into multi-channel optical cells (e.g., two-sector, six-sector) without air bubbles.
+                            </li>
+                            <li class="hover:text-accent-cyan transition-colors duration-200">
+                                <strong class="text-content-white">Rotor Loading and Balancing:</strong> Load loaded optical cells into the rotor and meticulously balance the rotor.
+                            </li>
+                            <li class="hover:text-accent-cyan transition-colors duration-200">
+                                <strong class="text-content-white">Chamber Sealing and Evacuation:</strong> Mount the balanced rotor, seal the chamber lid, and initiate the high-vacuum pump-down sequence.
+                            </li>
+                            <li class="hover:text-accent-cyan transition-colors duration-200">
+                                <strong class="text-content-white">Temperature Equilibration:</strong> Program and achieve the desired experimental temperature for the chamber, rotor, and samples.
+                            </li>
+                            <li class="hover:text-accent-cyan transition-colors duration-200">
+                                <strong class="text-content-white">Run Parameter Programming:</strong> Input experimental parameters via control software: rotor speed, run duration, optical scanning schedule (wavelengths, interval, radial range), and data acquisition settings.
+                            </li>
+                            <li class="hover:text-accent-cyan transition-colors duration-200">
+                                <strong class="text-content-white">Centrifugation and Data Acquisition:</strong> Start the run, accelerate the rotor, and acquire radial concentration profiles at specified intervals.
+                            </li>
+                            <li class="hover:text-accent-cyan transition-colors duration-200">
+                                <strong class="text-content-white">Deceleration and Unloading:</strong> Slowly decelerate the rotor under controlled conditions, restore atmospheric pressure, and carefully remove the rotor and sample cells.
+                            </li>
+                            <li class="hover:text-accent-cyan transition-colors duration-200">
+                                <strong class="text-content-white">Data Analysis:</strong> Transfer raw optical data to a workstation and use specialized software (e.g., SEDFIT, ULTRASCAN) to model data and extract biophysical parameters (sedimentation coefficients, diffusion coefficients, molecular weight distributions, association constants).
+                            </li>
+                        </ol>
+                    </div>
+
+                    <!-- Common Failure Points -->
+                    <div class="bg-secondary-charcoal p-6 rounded-2xl shadow-inner hover:shadow-accent-cyan/30 transition-shadow duration-300">
+                        <h4 class="text-2xl font-display font-semibold text-content-white mb-4 border-b border-accent-cyan/50 pb-2">Common Failure Points</h4>
+                        <ul class="list-disc list-inside space-y-3 text-lg text-text-charcoal">
+                            <li class="hover:text-accent-cyan transition-colors duration-200">
+                                <strong class="text-content-white">Rotor Imbalance or Damage:</strong> Can cause severe vibration, compromise data, or lead to catastrophic failure.
+                            </li>
+                            <li class="hover:text-accent-cyan transition-colors duration-200">
+                                <strong class="text-content-white">Vacuum System Leaks/Failure:</strong> Compromises rotor stability, causes overheating, prevents reaching maximum speeds, and halts operation.
+                            </li>
+                            <li class="hover:text-accent-cyan transition-colors duration-200">
+                                <strong class="text-content-white">Optical System Contamination/Misalignment:</strong> Dust, fingerprints, or condensation can obscure signals, cause scattering, generate noisy data, or lead to data loss. Misalignment requires expert service.
+                            </li>
+                            <li class="hover:text-accent-cyan transition-colors duration-200">
+                                <strong class="text-content-white">Temperature Control Malfunction:</strong> Fluctuations affect sample viscosity and density, leading to incorrect sedimentation rates and invalid data.
+                            </li>
+                            <li class="hover:text-accent-cyan transition-colors duration-200">
+                                <strong class="text-content-white">Drive System Wear/Failure:</strong> Bearing wear, motor issues, or electronic malfunctions can prevent speed attainment/maintenance, cause noise, or lead to system shutdown.
+                            </li>
+                            <li class="hover:text-accent-cyan transition-colors duration-200">
+                                <strong class="text-content-white">Sample Cell Issues:</strong> Leaks, improper seating, or scratches can cause sample loss, contamination, or compromised optical data quality.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technical Specifications Section -->
+            <section class="bg-content-white rounded-3xl p-8 md:p-12 shadow-2xl animate-fadeIn" style="animation-delay: 0.8s;">
+                <h3 class="text-3xl font-display font-semibold text-primary-blue mb-6">Technical Specifications</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse table-auto">
+                        <thead class="bg-primary-blue text-content-white">
+                            <tr>
+                                <th class="p-4 font-display text-lg tracking-wider uppercase border-b-2 border-accent-cyan">Parameter</th>
+                                <th class="p-4 font-display text-lg tracking-wider uppercase border-b-2 border-accent-cyan">Specification</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-secondary-charcoal">
+                            <tr class="hover:bg-gray-100 transition-colors duration-200">
+                                <td class="p-4 border-b border-gray-200 font-semibold text-primary-blue">Operating Principle</td>
+                                <td class="p-4 border-b border-gray-200">Sedimentation velocity and sedimentation-diffusion equilibrium</td>
+                            </tr>
+                            <tr class="hover:bg-gray-100 transition-colors duration-200">
+                                <td class="p-4 border-b border-gray-200 font-semibold text-primary-blue">Applications</td>
+                                <td class="p-4 border-b border-gray-200">Macromolecule characterization (molecular weight, size, shape, interactions)</td>
+                            </tr>
+                            <tr class="hover:bg-gray-100 transition-colors duration-200">
+                                <td class="p-4 border-b border-gray-200 font-semibold text-primary-blue">Rotor Material</td>
+                                <td class="p-4 border-b border-gray-200">Titanium or aluminum alloy</td>
+                            </tr>
+                            <tr class="hover:bg-gray-100 transition-colors duration-200">
+                                <td class="p-4 border-b border-gray-200 font-semibold text-primary-blue">Max Rotational Speed</td>
+                                <td class="p-4 border-b border-gray-200">Up to 60,000 RPM or higher</td>
+                            </tr>
+                            <tr class="hover:bg-gray-100 transition-colors duration-200">
+                                <td class="p-4 border-b border-gray-200 font-semibold text-primary-blue">Max Centrifugal Force</td>
+                                <td class="p-4 border-b border-gray-200">Exceeding 250,000 x g</td>
+                            </tr>
+                            <tr class="hover:bg-gray-100 transition-colors duration-200">
+                                <td class="p-4 border-b border-gray-200 font-semibold text-primary-blue">Vacuum Pressure</td>
+                                <td class="p-4 border-b border-gray-200">Typically below 10^-5 Torr</td>
+                            </tr>
+                            <tr class="hover:bg-gray-100 transition-colors duration-200">
+                                <td class="p-4 border-b border-gray-200 font-semibold text-primary-blue">Optical Detection System</td>
+                                <td class="p-4 border-b border-gray-200">UV-Vis absorption and/or Rayleigh interference</td>
+                            </tr>
+                            <tr class="hover:bg-gray-100 transition-colors duration-200">
+                                <td class="p-4 border-b border-gray-200 font-semibold text-primary-blue">Temperature Control</td>
+                                <td class="p-4 border-b border-gray-200">Precision Peltier or recirculating fluid system</td>
+                            </tr>
+                            <tr class="hover:bg-gray-100 transition-colors duration-200">
+                                <td class="p-4 border-b border-gray-200 font-semibold text-primary-blue">Temperature Stability</td>
+                                <td class="p-4 border-b border-gray-200">Typically ±0.1°C</td>
+                            </tr>
+                            <tr class="hover:bg-gray-100 transition-colors duration-200">
+                                <td class="p-4 border-b border-gray-200 font-semibold text-primary-blue">Drive System</td>
+                                <td class="p-4 border-b border-gray-200">High-precision, often brushless, direct-drive motor</td>
+                            </tr>
+                            <tr class="hover:bg-gray-100 transition-colors duration-200">
+                                <td class="p-4 border-b border-gray-200 font-semibold text-primary-blue">Sample Cells</td>
+                                <td class="p-4 border-b border-gray-200">Multi-channel optical cells (e.g., two-sector, six-sector)</td>
+                            </tr>
+                            <tr class="hover:bg-gray-100 transition-colors duration-200">
+                                <td class="p-4 border-b border-gray-200 font-semibold text-primary-blue">Data Analysis Software</td>
+                                <td class="p-4 border-b border-gray-200">SEDFIT, ULTRASCAN (external workstation)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+			
+			<!-- Data Table Section -->
+			<section class="bg-content-white rounded-3xl p-6 md:p-10 shadow-2xl animate-fadeIn" style="animation-delay: 1.0s;">
+				<h3 class="text-3xl font-display font-semibold text-primary-blue mb-2">Centerpiece Selection Guide</h3>
+				<p class="text-secondary-charcoal/70 mb-8 text-sm">Detailed specifications for Beckman AUC centerpiece assemblies.</p>
+				
+				<div class="overflow-x-auto rounded-xl border border-gray-200">
+					<table class="w-full text-left border-collapse table-fixed min-w-[1000px]">
+						<thead class="bg-primary-blue text-content-white">
+							<tr>
+								<th class="p-4 w-1/6 font-display text-xs tracking-wider uppercase border-b-2 border-accent-cyan">Type</th>
+								<th class="p-4 w-1/8 font-display text-xs tracking-wider uppercase border-b-2 border-accent-cyan">Material</th>
+								<th class="p-4 w-24 font-display text-xs tracking-wider uppercase border-b-2 border-accent-cyan">Part #</th>
+								<th class="p-4 w-24 font-display text-xs tracking-wider uppercase border-b-2 border-accent-cyan">Vol (mL)</th>
+								<th class="p-4 w-24 font-display text-xs tracking-wider uppercase border-b-2 border-accent-cyan">Max RPM</th>
+								<th class="p-4 w-1/3 font-display text-xs tracking-wider uppercase border-b-2 border-accent-cyan">Application / Description</th>
+							</tr>
+						</thead>
+						<tbody class="text-[13px] text-secondary-charcoal divide-y divide-gray-100">
+							<tr class="hover:bg-accent-cyan/5 transition-colors">
+								<td class="p-4 font-bold text-primary-blue">Standard Double Sector</td>
+								<td class="p-4">Aluminum</td>
+								<td class="p-4">334623</td>
+								<td class="p-4">0.45/sec</td>
+								<td class="p-4 font-mono">60,000</td>
+								<td class="p-4 leading-relaxed text-xs">Aqueous/biological (pH 3–10). Minimizes convection for velocity experiments.</td>
+							</tr>
+							<tr class="hover:bg-accent-cyan/5 transition-colors bg-gray-50/50">
+								<td class="p-4 font-bold text-primary-blue">Standard Double Sector</td>
+								<td class="p-4">12-mm Epon Charcoal</td>
+								<td class="p-4">306493</td>
+								<td class="p-4">0.45/sec</td>
+								<td class="p-4 font-mono">42,000</td>
+								<td class="p-4 leading-relaxed text-xs">Aqueous/biological. Best when aluminum ion contamination is a concern.</td>
+							</tr>
+							<tr class="hover:bg-accent-cyan/5 transition-colors">
+								<td class="p-4 font-bold text-primary-blue">Standard Double Sector</td>
+								<td class="p-4">3-mm Epon Charcoal</td>
+								<td class="p-4">361966</td>
+								<td class="p-4">0.12/sec</td>
+								<td class="p-4 font-mono">42,000</td>
+								<td class="p-4 leading-relaxed text-xs">Velocity experiments; requires two spacers (333717).</td>
+							</tr>
+							<tr class="hover:bg-accent-cyan/5 transition-colors bg-gray-50/50">
+								<td class="p-4 font-bold text-primary-blue">Standard Double Sector</td>
+								<td class="p-4">Epon Aluminum-filled</td>
+								<td class="p-4">305685</td>
+								<td class="p-4">0.45/sec</td>
+								<td class="p-4 font-mono">42,000</td>
+								<td class="p-4 leading-relaxed text-xs">Increased strength and thermal conductivity for velocity runs.</td>
+							</tr>
+							<tr class="hover:bg-accent-cyan/5 transition-colors">
+								<td class="p-4 font-bold text-primary-blue">Equilibrium 6-Channel</td>
+								<td class="p-4">Epon Charcoal</td>
+								<td class="p-4">331376</td>
+								<td class="p-4">0.12/chan</td>
+								<td class="p-4 font-mono">48,000</td>
+								<td class="p-4 leading-relaxed text-xs">Processes 3 pairs simultaneously; reduces time to reach equilibrium.</td>
+							</tr>
+							<tr class="hover:bg-accent-cyan/5 transition-colors bg-gray-50/50">
+								<td class="p-4 font-bold text-primary-blue">Equilibrium 6-Chan (Ext Fill)</td>
+								<td class="p-4">Epon Charcoal</td>
+								<td class="p-4">368116</td>
+								<td class="p-4">0.12/chan</td>
+								<td class="p-4 font-mono">48,000</td>
+								<td class="p-4 leading-relaxed text-xs">Loaded/unloaded without disassembly; allows sample recovery.</td>
+							</tr>
+							<tr class="hover:bg-accent-cyan/5 transition-colors">
+								<td class="p-4 font-bold text-primary-blue">Equilibrium 8-Channel</td>
+								<td class="p-4">Epon Charcoal</td>
+								<td class="p-4">361851</td>
+								<td class="p-4">0.025/chan</td>
+								<td class="p-4 font-mono">50,000</td>
+								<td class="p-4 leading-relaxed text-xs">Processes 4 pairs; designed for interference optics.</td>
+							</tr>
+							<tr class="hover:bg-accent-cyan/5 transition-colors bg-gray-50/50">
+								<td class="p-4 font-bold text-primary-blue">Synthetic Boundary</td>
+								<td class="p-4">Epon Charcoal</td>
+								<td class="p-4">331431</td>
+								<td class="p-4">0.4 sol / 0.15 sam</td>
+								<td class="p-4 font-mono">42,000</td>
+								<td class="p-4 leading-relaxed text-xs">Layers solution during processing; used for D or extinction coefficients.</td>
+							</tr>
+							<tr class="hover:bg-accent-cyan/5 transition-colors">
+								<td class="p-4 font-bold text-primary-blue">Band Forming</td>
+								<td class="p-4">Epon Charcoal</td>
+								<td class="p-4">331359</td>
+								<td class="p-4">0.01 well / 0.35 sec</td>
+								<td class="p-4 font-mono">42,000</td>
+								<td class="p-4 leading-relaxed text-xs">Used for active enzyme sedimentation and band sedimentation studies.</td>
+							</tr>
+							<tr class="hover:bg-accent-cyan/5 transition-colors bg-gray-50/50">
+								<td class="p-4 font-bold text-primary-blue">Titanium, 2-Channel</td>
+								<td class="p-4">Titanium</td>
+								<td class="p-4">810-12</td>
+								<td class="p-4">N/A</td>
+								<td class="p-4 font-mono">60,000</td>
+								<td class="p-4 leading-relaxed text-xs">Maximum speed rated. Requires titanium counterbalance due to weight.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+        </main>
+    </div>
+
+</body>
+</html>
