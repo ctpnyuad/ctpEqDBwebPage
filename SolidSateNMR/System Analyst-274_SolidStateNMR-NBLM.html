@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bruker 600 MHz Aeon NMR Spectrometer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-blue': 'hsl(210, 30%, 20%)', /* Darker, sophisticated blue */
+                        'charcoal-gray': 'hsl(220, 10%, 15%)', /* Very dark gray for background */
+                        'light-gray-bg': 'hsl(210, 15%, 95%)', /* Light background for sections */
+                        'crisp-white': 'hsl(0, 0%, 100%)',
+                        'accent-cyan': 'hsl(180, 70%, 50%)', /* Vibrant accent */
+                        'accent-cyan-dark': 'hsl(180, 70%, 40%)',
+                        'text-primary': 'hsl(220, 10%, 30%)', /* Darker text for readability */
+                        'text-secondary': 'hsl(220, 5%, 45%)',
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glass-sm': '0 2px 10px rgba(0, 0, 0, 0.1)',
+                        'glass-md': '0 4px 20px rgba(0, 0, 0, 0.15)',
+                        'glass-lg': '0 8px 30px rgba(0, 0, 0, 0.2)',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+                        'scale-in': 'scaleIn 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        scaleIn: {
+                            '0%': { transform: 'scale(0.95)', opacity: '0.7' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            html {
+                scroll-behavior: smooth;
+            }
+            body {
+                @apply bg-light-gray-bg font-sans text-text-primary leading-relaxed;
+            }
+            h1, h2, h3 {
+                @apply font-display font-bold text-deep-blue;
+            }
+            h1 {
+                @apply text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-tight;
+            }
+            h2 {
+                @apply text-3xl sm:text-4xl lg:text-5xl mt-8 mb-4;
+            }
+            h3 {
+                @apply text-2xl sm:text-3xl lg:text-4xl mt-6 mb-3;
+            }
+            p {
+                @apply mb-4 text-lg leading-relaxed;
+            }
+            ul, ol {
+                @apply list-inside mb-4 pl-5;
+            }
+            ul li {
+                @apply relative pl-6 mb-2 text-lg;
+            }
+            ul li::before {
+                content: "•";
+                @apply absolute left-0 text-accent-cyan font-bold text-xl;
+            }
+            ol li {
+                @apply mb-2 pl-2 text-lg;
+            }
+            table {
+                @apply w-full border-collapse my-6 shadow-glass-sm rounded-lg overflow-hidden;
+            }
+            th, td {
+                @apply px-4 py-3 text-left border-b border-gray-200;
+            }
+            th {
+                @apply bg-deep-blue text-crisp-white font-semibold uppercase tracking-wider text-sm;
+            }
+            tr:nth-child(even) {
+                @apply bg-white;
+            }
+            tr:nth-child(odd) {
+                @apply bg-gray-50;
+            }
+            tr:hover {
+                @apply bg-blue-50 transition-colors duration-200;
+            }
+            audio {
+                @apply w-full max-w-xl mx-auto my-6 p-3 rounded-xl shadow-lg bg-deep-blue;
+            }
+            img {
+                @apply max-w-full h-auto rounded-xl shadow-glass-md my-8 animate-scale-in;
+            }
+            .section-card {
+                @apply bg-crisp-white p-6 md:p-10 rounded-3xl shadow-glass-lg animate-fade-in-up;
+            }
+            .gradient-bg {
+                background: linear-gradient(135deg, hsl(210, 40%, 18%) 0%, hsl(220, 25%, 12%) 100%);
+            }
+            .glow-effect {
+                box-shadow: 0 0px 30px rgba(180, 230, 230, 0.4);
+            }
+        }
+    </style>
+</head>
+<body class="bg-charcoal-gray text-crisp-white font-sans">
+    <div class="min-h-screen flex flex-col items-center">
+        <!-- Header Section -->
+        <header class="w-full py-16 md:py-24 text-center gradient-bg text-crisp-white overflow-hidden relative">
+            <div class="absolute inset-0 z-0 opacity-10">
+                <svg class="w-full h-full" fill="none" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+                            <path d="M 10 0 L 0 0 L 0 10" fill="none" stroke="currentColor" stroke-width="0.1"/>
+                        </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#grid)" stroke="none" stroke-width="0"/>
+                </svg>
+            </div>
+            <div class="relative z-10 max-w-5xl mx-auto px-6">
+                <h1 class="text-crisp-white text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-tight animate-fade-in-up">
+                    600 MHz wide bore NMR Spectrometer - Bruker 600 MHz Aeon
+                </h1>
+                <p class="mt-4 text-xl sm:text-2xl font-light text-gray-300 animate-fade-in-up delay-100">
+                    Technical specifications and related applications
+                </p>
+                <div class="w-24 h-1 bg-accent-cyan mx-auto mt-8 rounded-full glow-effect animate-fade-in-up delay-200"></div>
+            </div>
+        </header>
+
+        <main class="w-full max-w-7xl mx-auto px-4 py-12 md:py-16">
+            <!-- Introduction Section -->
+            <section class="section-card my-12" style="animation-delay: 0.3s;">
+                <h2 class="text-deep-blue text-center mb-8">Introduction & Overview</h2>
+                <div class="max-w-xl mx-auto mb-8">
+                    <audio controls class="bg-deep-blue">
+                        <source src='NoteBookLMPodCast-274_SolidStateNMR.m4a' type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <h3 class="text-deep-blue">Executive Summary</h3>
+                <p class="text-text-primary">
+                    The Bruker 600 MHz Aeon NMR Spectrometer is a high-field, wide-bore instrument engineered for advanced nuclear magnetic resonance spectroscopy, leveraging a 14.1 Tesla superconducting magnet. This sophisticated system provides unparalleled resolution and sensitivity for comprehensive molecular structural and dynamic analysis across chemistry, biochemistry, and materials science applications.
+                </p>
+            </section>
+			
+						
+			<!-- Mind Map Section -->
+			<section class="bg-primary-blue rounded-3xl p-8 md:p-12 shadow-2xl animate-fadeIn" style="animation-delay: 0.3s;">
+				<div class="flex flex-col items-center">
+					<h3 class="text-3xl font-display font-semibold text-accent-cyan mb-2 text-center">AUC Conceptual Framework</h3>
+					<p class="text-text-charcoal mb-8 text-center max-w-2xl">
+						A comprehensive mind map connecting the hardware components, physical forces, and analytical outcomes.
+					</p>
+
+					<div class="w-full relative group cursor-zoom-in">
+						<img src="C:\data\CTP DB design\eqMasDeviceGemPages\NotebookLMMindMap-274_SolidStateNMR.png" 
+							 alt="Mind map covering Hardware, Physics, and Data Analysis" 
+							 class="w-full h-auto rounded-2xl shadow-lg border-2 border-accent-cyan/20 transition-all duration-500 group-hover:border-accent-cyan/60 group-hover:shadow-[0_0_30px_rgba(105,230,250,0.2)]"/>
+						
+						<div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10 pointer-events-none"></div>
+					</div>
+					
+					<div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
+						<div class="text-center p-3 bg-secondary-charcoal rounded-xl border border-accent-cyan/10">
+							<span class="block text-accent-cyan font-bold text-lg">Hardware</span>
+							<span class="text-xs uppercase opacity-60">Rotors & Optics</span>
+						</div>
+						<div class="text-center p-3 bg-secondary-charcoal rounded-xl border border-accent-cyan/10">
+							<span class="block text-accent-cyan font-bold text-lg">Forces</span>
+							<span class="text-xs uppercase opacity-60">Sedimentation & Diffusion</span>
+						</div>
+						<div class="text-center p-3 bg-secondary-charcoal rounded-xl border border-accent-cyan/10">
+							<span class="block text-accent-cyan font-bold text-lg">Metrics</span>
+							<span class="text-xs uppercase opacity-60">S-Coefficients & MW</span>
+						</div>
+						<div class="text-center p-3 bg-secondary-charcoal rounded-xl border border-accent-cyan/10">
+							<span class="block text-accent-cyan font-bold text-lg">Software</span>
+							<span class="text-xs uppercase opacity-60">SEDFIT & UltraScan</span>
+						</div>
+					</div>
+				</div>
+			</section>
+
+            <!-- Core Explanation Section -->
+            <section class="section-card my-12" style="animation-delay: 0.5s;">
+                <h2 class="text-deep-blue text-center mb-8">Core Operating Principle</h2>
+                <p class="text-text-primary">
+                    The Bruker 600 MHz Aeon operates by subjecting a sample to a powerful, highly homogeneous 14.1 Tesla magnetic field, which aligns the magnetic moments of atomic nuclei with non-zero spin. Radiofrequency (RF) pulses are then precisely applied to excite these aligned spins, tilting them out of alignment. Upon cessation of the RF pulse, the excited nuclei relax back to their equilibrium state, emitting characteristic RF signals (Free Induction Decays or FIDs) whose frequencies and intensities are detected, amplified, digitized, and Fourier-transformed into an NMR spectrum, providing detailed information about the sample's molecular environment.
+                </p>
+			</div>
+			
+			<div class="relative group">
+				<h4 class="text-sm uppercase tracking-widest text-secondary-charcoal/60 font-bold mb-4 text-center">Visual Representation:</h4>
+				<img src="C:\data\CTP DB design\eqMasDeviceGemPages\NotebookLMInfoGrapics-274_SolidStateNMR.png" 
+					alt="Infographic Solid State NMR" 
+					class="w-full h-auto rounded-xl shadow-lg transition-transform duration-300 ease-in-out group-hover:scale-[1.02] group-hover:shadow-2xl border-2 border-accent-cyan/30"/>
+        
+				<div class="absolute inset-0 bg-accent-cyan opacity-0 rounded-xl pointer-events-none transition-opacity duration-300 group-hover:opacity-5"></div>
+        
+				<p class="mt-4 text-sm text-secondary-charcoal/70 italic text-center">
+            
+				</p>
+			</div>
+		</section>
+
+            <!-- Detailed Breakdown Section -->
+            <section class="section-card my-12" style="animation-delay: 0.7s;">
+                <h2 class="text-deep-blue text-center mb-8">Detailed System Breakdown</h2>
+
+                <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+                    <div>
+                        <h3 class="text-deep-blue">Component Breakdown</h3>
+                        <ul class="list-none text-text-primary">
+                            <li>
+                                <span class="font-medium text-deep-blue">Superconducting Magnet System:</span> A wide-bore, actively shielded 14.1 Tesla (600 MHz proton frequency) superconducting magnet, maintained at cryogenic temperatures (typically by liquid helium and nitrogen or cryocoolers), generating the exceptionally stable and homogeneous magnetic field crucial for high-resolution NMR.
+                            </li>
+                            <li>
+                                <span class="font-medium text-deep-blue">RF Transceiver and Amplifier System:</span> Comprises sophisticated RF synthesis circuitry for generating precise excitation pulses across a broad frequency range for various nuclei, high-power amplifiers to deliver these pulses, and low-noise preamplifiers for sensitive detection and amplification of the weak NMR signals emitted by the sample.
+                            </li>
+                            <li>
+                                <span class="font-medium text-deep-blue">NMR Probe:</span> The critical interface positioned within the magnet's bore, housing RF coils tuned for specific nuclei (e.g., 1H, 13C, 15N), a sample holder, temperature control mechanisms, and often gradient coils, optimized for maximizing signal-to-noise ratio and spectral resolution.
+                            </li>
+                            <li>
+                                <span class="font-medium text-deep-blue">Spectrometer Console and Workstation:</span> The central control unit integrating pulse programmers, digital acquisition hardware, shim power supplies, and the host computer workstation. This system manages all experimental parameters, performs real-time data acquisition, and runs specialized software (e.g., TopSpin) for data processing, analysis, and instrument control.
+                            </li>
+                            <li>
+                                <span class="font-medium text-deep-blue">Gradient System:</span> Integrated gradient coils within the probe or shim stack, along with their high-power amplifiers, capable of generating precisely controlled linear magnetic field gradients. These gradients are vital for shimming, spatial encoding in imaging, diffusion measurements, and multidimensional NMR experiments.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-deep-blue">Step-by-Step Workflow</h3>
+                        <ol class="list-decimal text-text-primary">
+                            <li>
+                                <span class="font-medium text-deep-blue">Sample Preparation:</span> A sample is precisely dissolved in a deuterated solvent (to avoid solvent proton signals) and loaded into a high-quality NMR tube, then placed into a spinner assembly for rotation.
+                            </li>
+                            <li>
+                                <span class="font-medium text-deep-blue">Sample Insertion and Positioning:</span> The prepared sample is pneumatically or manually inserted into the bore of the superconducting magnet and precisely positioned within the homogeneous region of the NMR probe's RF coils.
+                            </li>
+                            <li>
+                                <span class="font-medium text-deep-blue">Shimming:</span> Automated or manual shimming routines are executed to optimize the magnetic field homogeneity across the sample volume, adjusting superconducting and/or room-temperature shim coils to achieve the narrowest possible spectral lines.
+                            </li>
+                            <li>
+                                <span class="font-medium text-deep-blue">Probe Tuning and Matching:</span> The NMR probe's RF coils are electronically tuned to the Larmor frequency of the specific nucleus being observed and matched to the 50-ohm impedance of the spectrometer to ensure maximum RF power transfer and signal reception efficiency.
+                            </li>
+                            <li>
+                                <span class="font-medium text-deep-blue">Experiment Setup and Parameter Definition:</span> The user selects the appropriate pulse sequence (e.g., 1D proton, COSY, HSQC), defines acquisition parameters such as spectral width, acquisition time, number of scans, temperature, and receiver gain via the spectrometer control software.
+                            </li>
+                            <li>
+                                <span class="font-medium text-deep-blue">RF Excitation and Data Acquisition:</span> The spectrometer applies the programmed sequence of RF pulses to the sample. The resulting Free Induction Decay (FID) signal, emitted by the relaxing nuclear spins, is detected by the probe, amplified, digitized, and accumulated by the spectrometer console.
+                            </li>
+                            <li>
+                                <span class="font-medium text-deep-blue">Data Processing:</span> The raw time-domain FID data undergoes Fourier transformation to convert it into a frequency-domain NMR spectrum. Subsequent processing steps include phasing, baseline correction, and potentially solvent suppression to enhance spectrum quality.
+                            </li>
+                            <li>
+                                <span class="font-medium text-deep-blue">Spectral Analysis and Interpretation:</span> The processed spectrum is analyzed to determine chemical shifts, coupling constants, signal intensities, and relaxation times, providing detailed information on molecular structure, conformation, dynamics, and quantification.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="mt-12">
+                    <h3 class="text-deep-blue">Common Failure Points</h3>
+                    <ul class="list-none text-text-primary">
+                        <li>
+                            <span class="font-medium text-deep-blue">Superconducting Magnet Quench:</span> A sudden, uncontrolled transition of the magnet's coils from a superconducting to a resistive state, leading to rapid boil-off of liquid helium, loss of the magnetic field, and potential damage to the magnet or cryostats.
+                        </li>
+                        <li>
+                            <span class="font-medium text-deep-blue">Cryogen Depletion:</span> Insufficient levels of liquid helium or nitrogen (if applicable) can lead to magnet instability, increased cryocooler load in cryogen-free systems, reduced magnetic field homogeneity, or ultimately a quench.
+                        </li>
+                        <li>
+                            <span class="font-medium text-deep-blue">NMR Probe Damage/Malfunction:</span> Physical damage to the probe (e.g., from dropped samples), failure of internal RF coils, tuning/matching circuitry, or temperature control elements, leading to poor signal-to-noise, inability to tune, or complete loss of signal.
+                        </li>
+                        <li>
+                            <span class="font-medium text-deep-blue">RF Amplifier/Receiver Issues:</span> Degradation or failure of high-power RF amplifiers (leading to insufficient pulse power) or low-noise preamplifiers (leading to poor signal detection sensitivity and high noise floors) can severely impact spectral quality.
+                        </li>
+                        <li>
+                            <span class="font-medium text-deep-blue">Shimming System Malfunctions:</span> Failure of shim power supplies or physical damage to shim coils, preventing the proper optimization of magnetic field homogeneity and resulting in broad, poorly resolved spectral lines.
+                        </li>
+                        <li>
+                            <span class="font-medium text-deep-blue">Vacuum System Leaks:</span> For cryogen-free magnets and certain probe designs, leaks in the vacuum jacket can compromise thermal insulation, increase the cryocooler's workload, and potentially lead to magnet warm-up or probe performance degradation.
+                        </li>
+                        <li>
+                            <span class="font-medium text-deep-blue">Data Acquisition and Control Unit Errors:</span> Software glitches, communication failures between the workstation and spectrometer console, or hardware faults within the console can disrupt experiment execution, data integrity, or instrument control.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Technical Specifications Section -->
+            <section class="section-card my-12" style="animation-delay: 0.9s;">
+                <h2 class="text-deep-blue text-center mb-8">Technical Specifications</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Specification</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Model</strong></td>
+                            <td>Bruker 600 MHz Aeon</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Instrument Type</strong></td>
+                            <td>High-field, wide-bore NMR Spectrometer</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Magnetic Field Strength</strong></td>
+                            <td>14.1 Tesla</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Proton Operating Frequency</strong></td>
+                            <td>600 MHz</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Magnet Design</strong></td>
+                            <td>Superconducting, actively shielded, wide-bore</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Magnet Cooling</strong></td>
+                            <td>Cryogenic (typically liquid helium and nitrogen or cryocoolers)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Resolution</strong></td>
+                            <td>Unparalleled</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sensitivity</strong></td>
+                            <td>Unparalleled</td>
+                        </tr>
+                        <tr>
+                            <td><strong>RF Transceiver System</strong></td>
+                            <td>Broad frequency range, high-power amplifiers, low-noise preamplifiers</td>
+                        </tr>
+                        <tr>
+                            <td><strong>NMR Probe Features</strong></td>
+                            <td>RF coils, sample holder, temperature control, gradient coils</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Example Supported Nuclei</strong></td>
+                            <td>1H, 13C, 15N</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Control System</strong></td>
+                            <td>Spectrometer Console and Workstation (pulse programmers, digital acquisition)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Control Software</strong></td>
+                            <td>Specialized (e.g., TopSpin)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Gradient System</strong></td>
+                            <td>Integrated gradient coils with high-power amplifiers</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Primary Applications</strong></td>
+                            <td>Molecular structural and dynamic analysis in chemistry, biochemistry, materials science</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
