@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incucyte SX5-Sartorius | Technical Breakdown</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0F172A', // Deep Blue
+                        secondary: '#1E293B', // Charcoal Gray
+                        accent: '#06B6D4', // Vibrant Cyan
+                        surface: '#F8FAFC', // Crisp White-ish
+                    },
+                    fontFamily: {
+                        display: ['Montserrat', 'sans-serif'],
+                        body: ['Roboto', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0F172A;
+            color: #E2E8F0;
+            scroll-behavior: smooth;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .accent-gradient-text {
+            background: linear-gradient(135deg, #22D3EE, #06B6D4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0F172A;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #06B6D4;
+        }
+        audio::-webkit-media-controls-panel {
+            background-color: #1E293B;
+        }
+        audio::-webkit-media-controls-current-time-display,
+        audio::-webkit-media-controls-time-remaining-display {
+            color: #06B6D4;
+        }
+        .workflow-step:before {
+            content: counter(step-counter);
+            counter-increment: step-counter;
+            position: absolute;
+            left: -1.5rem;
+            top: 0;
+            width: 2rem;
+            height: 2rem;
+            background: #06B6D4;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #0F172A;
+            box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
+        }
+        ol {
+            counter-reset: step-counter;
+        }
+    </style>
+</head>
+<body class="font-body leading-relaxed custom-scrollbar">
+
+    <!-- Header Section -->
+    <header class="relative overflow-hidden pt-20 pb-16 px-6">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full opacity-20 pointer-events-none">
+            <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[60%] bg-accent blur-[120px] rounded-full"></div>
+            <div class="absolute bottom-[-10%] right-[-10%] w-[30%] h-[50%] bg-blue-900 blur-[100px] rounded-full"></div>
+        </div>
+        
+        <div class="relative max-w-5xl mx-auto text-center">
+            <h1 class="font-display text-5xl md:text-7xl font-800 tracking-tight text-white mb-4 animate-fade-in">
+                Incucyte <span class="accent-gradient-text">SX5-Sartorius</span>
+            </h1>
+            <h2 class="font-display text-lg md:text-2xl font-400 text-slate-400 tracking-wide uppercase">
+                Detailed Technical specifications and related applications
+            </h2>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 pb-24 space-y-16">
+	
+
+            <!-- Introduction Section -->
+            <section class="bg-primary-blue rounded-3xl p-8 md:p-12 shadow-2xl animate-fadeIn" style="animation-delay: 0.2s;">
+                <h3 class="text-3xl font-display font-semibold text-accent-cyan mb-6">Executive Summary</h3>
+                <div class="bg-secondary-charcoal p-6 rounded-2xl mb-8 flex flex-col md:flex-row items-center gap-6 shadow-inner animate-pulseAccent">
+                    <audio controls class="w-full md:w-auto flex-grow" style="filter: hue-rotate(180deg) saturate(200%);">
+                        <source src="NotebookLMPodCast-562_Incucyte SX5-Sartorius.m4a" type='audio/mpeg'>
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <p class="text-lg text-content-white opacity-90 leading-relaxed">
+                    The Incucyte SX5-Sartorius is an advanced automated live-cell analysis system designed for real-time, kinetic monitoring of cell cultures directly within an incubator environment. This instrument provides continuous, non-invasive quantification of cellular proliferation, morphology, and protein expression via bright-field and multi-channel fluorescence imaging, enabling comprehensive longitudinal studies.
+                </p>
+            </section>
+			
+
+
+			<!-- Mind Map Section -->
+			<section class="bg-primary-blue rounded-3xl p-8 md:p-12 shadow-2xl animate-fadeIn" style="animation-delay: 0.3s;">
+				<div class="flex flex-col items-center">
+					<h3 class="text-3xl font-display font-semibold text-accent-cyan mb-2 text-center">Incucyte Conceptual Framework</h3>
+					<p class="text-text-charcoal mb-8 text-center max-w-2xl">
+						A comprehensive mind map connecting the hardware components, software, and analytical outcomes of Incucyte.
+					</p>
+
+					<div class="w-full relative group cursor-zoom-in">
+						<img src="NotebookLMMindMap-562_Incucyte SX5-Sartorius.png" 
+							 alt="Mind map of Incucyte" 
+							 class="w-full h-auto rounded-2xl shadow-lg border-2 border-accent-cyan/20 transition-all duration-500 group-hover:border-accent-cyan/60 group-hover:shadow-[0_0_30px_rgba(105,230,250,0.2)]"/>
+						
+						<div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10 pointer-events-none"></div>
+					</div>
+				</div>
+			</section>
+			
+			
+			
+            <!-- Core Explanation Section -->
+            <section class="bg-content-white rounded-3xl p-8 md:p-12 shadow-2xl animate-fadeIn" style="animation-delay: 0.4s;">
+				<h3 class="text-3xl font-display font-semibold text-primary-blue mb-6">Core Operating Principle</h3>
+    
+				<div class="mb-10">
+					<p class="text-lg text-secondary-charcoal leading-relaxed">
+						The Incucyte SX5 operates on the principle of automated, time-lapse microscopy integrated within a standard cell culture incubator, maintaining physiological conditions while continuously imaging cells.
+					</p>
+					<p class="text-slate-400 text-md leading-relaxed">
+                        It utilizes a precision robotic stage to sequentially scan multiple wells or culture vessels, capturing high-resolution bright-field and fluorescence images at user-defined intervals. Proprietary image analysis software then processes these vast datasets to quantify dynamic cellular processes, such as confluence, cell migration, apoptosis, and reporter gene expression, over hours to weeks without manual intervention.
+                    </p>
+			</div>
+
+			<div class="relative group">
+				<h4 class="text-sm uppercase tracking-widest text-secondary-charcoal/60 font-bold mb-4 text-center">Visual Representation: Incucyte</h4>
+				<img src="NotebookLMInfographics-562_Incucyte SX5-Sartorius.png" 
+					alt="Incucyte SX5 Infographic" 
+					class="w-full h-auto rounded-xl shadow-lg transition-transform duration-300 ease-in-out group-hover:scale-[1.02] group-hover:shadow-2xl border-2 border-accent-cyan/30"/>
+        
+				<div class="absolute inset-0 bg-accent-cyan opacity-0 rounded-xl pointer-events-none transition-opacity duration-300 group-hover:opacity-5"></div>
+        
+				<p class="mt-4 text-sm text-secondary-charcoal/70 italic text-center">
+            
+				</p>
+			</div>
+		</section>
+
+        <!-- Detailed Breakdown Section -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Component Breakdown -->
+            <div class="glass-card rounded-2xl p-8 hover:border-accent/50 transition-colors duration-300">
+                <h3 class="font-display text-xl font-bold text-accent mb-6 flex items-center gap-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
+                    Component Breakdown
+                </h3>
+                <ul class="space-y-4 text-slate-300 text-sm">
+                    <li><strong class="text-white">Optical Module:</strong> Interchangeable objectives (4x, 10x, 20x), sCMOS camera sensor, and multi-channel LED illumination (Green, Red, Far-Red).</li>
+                    <li><strong class="text-white">Automated XY Stage:</strong> Precision stepper-motor stage for microplates (6-384 well) and flasks, ensuring reproducible imaging positions.</li>
+                    <li><strong class="text-white">Integrated Processing:</strong> Embedded PC with RAID storage for high-throughput acquisition and real-time data management.</li>
+                    <li><strong class="text-white">Software Suite:</strong> Algorithms for object segmentation, cell counting, and kinetic data visualization.</li>
+                </ul>
+            </div>
+
+            <!-- Step-by-Step Workflow -->
+            <div class="glass-card rounded-2xl p-8 md:col-span-2">
+                <h3 class="font-display text-xl font-bold text-accent mb-10 flex items-center gap-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    Step-by-Step Workflow
+                </h3>
+                <ol class="space-y-8 ml-8">
+                    <li class="workflow-step relative pl-4">
+                        <p class="text-white font-semibold">Experimental Setup</p>
+                        <p class="text-slate-400 text-sm">Cultures are prepared in compatible vessels and placed into the Incucyte within a CO2 incubator.</p>
+                    </li>
+                    <li class="workflow-step relative pl-4">
+                        <p class="text-white font-semibold">Protocol Definition</p>
+                        <p class="text-slate-400 text-sm">Define imaging frequency, duration, magnification, and specific fluorescence channels via software.</p>
+                    </li>
+                    <li class="workflow-step relative pl-4">
+                        <p class="text-white font-semibold">Automated Imaging Cycle</p>
+                        <p class="text-slate-400 text-sm">Robotic stage positions vessel; sCMOS camera captures high-res images for all defined channels.</p>
+                    </li>
+                    <li class="workflow-step relative pl-4">
+                        <p class="text-white font-semibold">Data Acquisition & Analysis</p>
+                        <p class="text-slate-400 text-sm">Raw data is timestamped and analyzed in real-time to quantify metrics like confluence and intensity.</p>
+                    </li>
+                    <li class="workflow-step relative pl-4">
+                        <p class="text-white font-semibold">Visualization & Export</p>
+                        <p class="text-slate-400 text-sm">Users access kinetic graphs and original images through the interface for real-time monitoring.</p>
+                    </li>
+                </ol>
+            </div>
+
+            <!-- Common Failure Points -->
+            <div class="glass-card rounded-2xl p-8 md:col-span-3">
+                <h3 class="font-display text-xl font-bold text-red-400 mb-6 flex items-center gap-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                    Common Failure Points
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="p-4 bg-slate-800/50 rounded-xl border-l-2 border-red-500">
+                        <p class="text-white font-bold mb-1">Optical Focus</p>
+                        <p class="text-slate-400 text-xs">Dust or alignment drift leading to blurry/inconsistent image data.</p>
+                    </div>
+                    <div class="p-4 bg-slate-800/50 rounded-xl border-l-2 border-red-500">
+                        <p class="text-white font-bold mb-1">Mechanical Stage</p>
+                        <p class="text-slate-400 text-xs">Wear on motors or rails causing inaccurate plate positioning.</p>
+                    </div>
+                    <div class="p-4 bg-slate-800/50 rounded-xl border-l-2 border-red-500">
+                        <p class="text-white font-bold mb-1">Illumination Degradation</p>
+                        <p class="text-slate-400 text-xs">LED aging or filter bleaching reducing signal-to-noise ratio.</p>
+                    </div>
+                    <div class="p-4 bg-slate-800/50 rounded-xl border-l-2 border-red-500">
+                        <p class="text-white font-bold mb-1">Software Glitches</p>
+                        <p class="text-slate-400 text-xs">Firmware bugs or OS errors disrupting protocols and analysis.</p>
+                    </div>
+                    <div class="p-4 bg-slate-800/50 rounded-xl border-l-2 border-red-500">
+                        <p class="text-white font-bold mb-1">Storage/Network</p>
+                        <p class="text-slate-400 text-xs">Disk failure or network overload leading to critical data loss.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Specifications Table -->
+        <section class="space-y-8">
+            <h3 class="font-display text-3xl font-bold text-white text-center">Technical Specifications</h3>
+            <div class="overflow-x-auto rounded-3xl border border-slate-700 shadow-2xl">
+                <table class="w-full text-left border-collapse bg-secondary">
+                    <thead>
+                        <tr class="bg-slate-800">
+                            <th class="px-6 py-5 text-accent font-display uppercase tracking-wider text-sm border-b border-slate-700">Parameter</th>
+                            <th class="px-6 py-5 text-accent font-display uppercase tracking-wider text-sm border-b border-slate-700">Specification</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-700 text-slate-300">
+                        <tr class="hover:bg-slate-700/30 transition-colors">
+                            <td class="px-6 py-4 font-bold text-white whitespace-nowrap">System Type</td>
+                            <td class="px-6 py-4">Automated live-cell analysis system</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/30 transition-colors">
+                            <td class="px-6 py-4 font-bold text-white whitespace-nowrap">Operating Environment</td>
+                            <td class="px-6 py-4">Within a standard cell culture incubator</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/30 transition-colors">
+                            <td class="px-6 py-4 font-bold text-white whitespace-nowrap">Analysis Method</td>
+                            <td class="px-6 py-4">Real-time, kinetic monitoring; time-lapse microscopy</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/30 transition-colors">
+                            <td class="px-6 py-4 font-bold text-white whitespace-nowrap">Imaging Modalities</td>
+                            <td class="px-6 py-4">Bright-field, Multi-channel fluorescence</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/30 transition-colors">
+                            <td class="px-6 py-4 font-bold text-white whitespace-nowrap">Quantifiable Metrics</td>
+                            <td class="px-6 py-4">Cellular proliferation, morphology, protein expression, confluence, migration, apoptosis</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/30 transition-colors">
+                            <td class="px-6 py-4 font-bold text-white whitespace-nowrap">Objectives</td>
+                            <td class="px-6 py-4">Interchangeable (e.g., 4x, 10x, 20x magnification)</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/30 transition-colors">
+                            <td class="px-6 py-4 font-bold text-white whitespace-nowrap">Camera Sensor</td>
+                            <td class="px-6 py-4">Highly sensitive sCMOS camera</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/30 transition-colors">
+                            <td class="px-6 py-4 font-bold text-white whitespace-nowrap">Illumination</td>
+                            <td class="px-6 py-4">LED (Bright-field), Green/Red/Far-Red LEDs (Fluorescence)</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/30 transition-colors">
+                            <td class="px-6 py-4 font-bold text-white whitespace-nowrap">Stage Type</td>
+                            <td class="px-6 py-4">Automated XY Stage, precision stepper-motor driven</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/30 transition-colors">
+                            <td class="px-6 py-4 font-bold text-white whitespace-nowrap">Vessel Compatibility</td>
+                            <td class="px-6 py-4">6- to 384-well plates, flasks, various culture vessels</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/30 transition-colors">
+                            <td class="px-6 py-4 font-bold text-white whitespace-nowrap">Processing & Storage</td>
+                            <td class="px-6 py-4">Embedded industrial PC, SSD/HDD RAID array (TB capacity)</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/30 transition-colors">
+                            <td class="px-6 py-4 font-bold text-white whitespace-nowrap">Experiment Duration</td>
+                            <td class="px-6 py-4">Continuous monitoring from hours to weeks</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Smooth reveal of sections on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
